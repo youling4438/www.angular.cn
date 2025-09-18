@@ -24,14 +24,17 @@
   </ul>
   
     <div class="docs-alert docs-alert-helpful">
-    <p><strong>提示：</strong> 本文档中描述的实践适用于 Angular 2.0 及更高版本。如果你目前正在使用 AngularJS，请参阅<a href="https://angular.io/guide/upgrade" title="Upgrading" from angular js target="_blank">从 AngularJS 升级</a>。<em>AngularJS</em> 是所有 v1.x 版本 Angular 的名称。</p>
+    <p><strong>有帮助：</strong>本文档中描述的实践适用于 Angular 2.0 及更高版本。
+如果您当前使用的是 AngularJS，请参阅<a href="https://angular.io/guide/upgrade" title="Upgrading from Angular JS" target="_blank">从 AngularJS 升级</a>。
+<em>AngularJS</em> 是 Angular 所有 v1.x 版本的名称。</p>
 
     </div>
     
   <h2 id="angular-versioning">
     <a href="#angular-versioning" class="docs-anchor" tabindex="-1" aria-label="Link to Angular versioning">Angular 版本控制</a>
   </h2>
-  <p>Angular 版本号指示了版本发布所引入的变更级别。这种<a href="https://semver.org/" title="Semantic" versioning specification target="_blank">语义化版本控制</a>的使用有助于你了解更新到新版本的潜在影响。</p>
+  <p>Angular 版本号指示了发布所引入的更改级别。
+这种<a href="https://semver.org/" title="Semantic Versioning Specification" target="_blank">语义化版本控制</a>的使用有助于您了解更新到新版本可能产生的影响。</p>
 <p>Angular 版本号有三个部分：<code>major.minor.patch</code>。例如，版本 7.2.11 表示主版本 7，次版本 2 和补丁级别 11。</p>
 <p>版本号会根据版本发布中包含的变更级别进行递增。</p>
 
@@ -139,16 +142,16 @@
       </thead>
       <tbody>
         <tr>
-<td align="left">v19.1</td>
-<td align="left">2025-01-13当周</td>
+<td align="left">v20.1</td>
+<td align="left">2025-07-07 所在周</td>
 </tr>
 <tr>
-<td align="left">v19.2</td>
-<td align="left">2025-02-24当周</td>
+<td align="left">v20.2</td>
+<td align="left">2025-08-18 所在周</td>
 </tr>
 <tr>
-<td align="left">v20.0</td>
-<td align="left">2025-05-26当周</td>
+<td align="left">v21.0</td>
+<td align="left">2025-11-17 周</td>
 </tr>
 
       </tbody>
@@ -205,10 +208,17 @@
       </thead>
       <tbody>
         <tr>
-<td align="left">^19.0.0</td>
+<td align="left">^20.0.0</td>
 <td align="left">积极支持</td>
+<td align="left">2025-05-28</td>
+<td align="left">2025-11-21</td>
+<td align="left">2026-11-21</td>
+</tr>
+<tr>
+<td align="left">^19.0.0</td>
+<td align="left">LTS</td>
 <td align="left">2024-11-19</td>
-<td align="left">2025-05-19</td>
+<td align="left">2025-05-28</td>
 <td align="left">2026-05-19</td>
 </tr>
 <tr>
@@ -216,20 +226,13 @@
 <td align="left">LTS</td>
 <td align="left">2024-05-22</td>
 <td align="left">2024-11-19</td>
-<td align="left">2025-11-19</td>
-</tr>
-<tr>
-<td align="left">^17.0.0</td>
-<td align="left">LTS</td>
-<td align="left">2023-11-08</td>
-<td align="left">2024-05-08</td>
-<td align="left">2025-05-15</td>
+<td align="left">2025-11-21</td>
 </tr>
 
       </tbody>
     </table>
   </div>
-  <p>Angular v2 到 v16 版本已不再受支持。</p>
+  <p>Angular v2 到 v17 版本不再受支持。</p>
 
   <h3 id="lts-fixes">
     <a href="#lts-fixes" class="docs-anchor" tabindex="-1" aria-label="Link to LTS fixes">LTS 修复</a>
@@ -260,7 +263,7 @@
       <tbody>
         <tr>
 <td align="left">公告</td>
-<td align="left">我们在 <a href="https://github.com/angular/angular/blob/main/CHANGELOG.md" title="Angular" change log target="_blank">变更日志</a> 中宣布已弃用的 API 和特性。已弃用的 API 会在 <a href="api?status=deprecated">文档</a> 中以 <del>删除线</del> 的形式出现。当我们宣布弃用时，我们还会宣布推荐的更新路径。此外，所有已弃用的 API 都在相应的文档中使用 <code>@deprecated</code> 进行注解，这使文本编辑器和 IDE 能够在您的项目依赖于它们时提供提示。</td>
+<td align="left">我们会在<a href="https://github.com/angular/angular/blob/main/CHANGELOG.md" title="Angular change log" target="_blank">更新日志</a>中宣布已弃用的 API 和特性。已弃用的 API 会在<a href="api?status=deprecated">文档</a>中以<del>删除线</del>形式显示。当我们宣布弃用时，也会同时宣布推荐的更新路径。此外，所有已弃用的 API 在相应的文档中都会用 <code>@deprecated</code> 注解，这使得文本编辑器和 IDE 能够在您的项目依赖它们时提供提示。</td>
 </tr>
 <tr>
 <td align="left">弃用周期</td>
@@ -278,9 +281,9 @@
   <h2 id="compatibility-policy">
     <a href="#compatibility-policy" class="docs-anchor" tabindex="-1" aria-label="Link to Compatibility policy">兼容性策略</a>
   </h2>
-  <p>Angular 是许多软件包、子项目和工具的集合。
-为了防止意外使用私有 API，并使您可以清楚地了解此处描述的实践涵盖的内容，我们记录了哪些被认为是我们的公共 API 表面，哪些不是。
-有关详细信息，请参阅 <a href="https://github.com/angular/angular/blob/main/contributing-docs/public-api-surface.md" title="Supported" public api surface of angular target="_blank">Angular 支持的公共 API 表面</a>。</p>
+  <p>Angular 是由许多包、子项目和工具组成的集合。
+为防止意外使用私有 API，并让您清楚地了解此处所述实践所涵盖的内容——我们记录了什么是以及什么不是我们的公共 API 表面。
+有关详细信息，请参阅 <a href="https://github.com/angular/angular/blob/main/contributing-docs/public-api-surface.md" title="Supported Public API Surface of Angular" target="_blank">Angular 的受支持公共 API 表面</a>。</p>
 <p>为了保证 Angular 的向后兼容性，我们在合并任何更改之前都会运行一系列检查：</p>
 
   <ul class="docs-list">

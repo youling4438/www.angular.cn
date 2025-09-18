@@ -4,17 +4,17 @@
       
   <!-- Page title -->
   <div class="docs-page-title">
-    <h1 tabindex="-1"><code>HttpClient</code> 安全性</h1>
+    <h1 tabindex="-1"><a href="/api/common/http/HttpClient"><code>HttpClient</code></a> 安全性</h1>
     <a class="docs-github-links" target="_blank" href="https://github.com/angular/angular/edit/main/adev/src/content/guide/http/security.md" title="Edit this page" aria-label="Edit this page">
       <!-- Pencil -->
       <docs-icon role="presentation">edit</docs-icon>
     </a>
   </div>
     </header>
-    <p><code>HttpClient</code> 内置了对两种常见的 HTTP 安全机制的支持：XSSI 保护和 XSRF/CSRF 保护。</p>
+    <p><a href="/api/common/http/HttpClient"><code>HttpClient</code></a> 内置支持两种常见的 HTTP 安全机制：XSSI 防护和 XSRF/CSRF 防护。</p>
 
     <div class="docs-alert docs-alert-tip">
-    <p><strong>提示：</strong> 还可以考虑为你的 API 采用 <a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy" target="_blank">Content Security Policy</a>。</p>
+    <p><strong>提示：</strong> 还可以考虑为你的 API 采用<a href="https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy" target="_blank">内容安全策略</a>。</p>
 
     </div>
     
@@ -23,13 +23,13 @@
   </h2>
   <p>跨站脚本包含 (XSSI) 是一种 <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank">跨站脚本</a> 攻击，在这种攻击中，攻击者将来自你的 API 端点的 JSON 数据作为 <code>&lt;script&gt;</code> 加载到他们控制的页面上。然后可以使用不同的 JavaScript 技术来访问这些数据。</p>
 <p>防止 XSSI 的一种常用技术是使用“不可执行前缀”（通常为 <code>)]}',\n</code>）来提供 JSON 响应。此前缀会阻止 JSON 响应被解释为有效的可执行 JavaScript。当 API 作为数据加载时，可以在 JSON 解析之前剥离此前缀。</p>
-<p><code>HttpClient</code> 在从响应中解析 JSON 时，会自动去除 XSSI 前缀（如果存在）。</p>
+<p><a href="/api/common/http/HttpClient"><code>HttpClient</code></a> 在解析响应中的 JSON 时会自动去除此 XSSI 前缀（如果存在）。</p>
 
   <h2 id="xsrf-csrf-protection">
     <a href="#xsrf-csrf-protection" class="docs-anchor" tabindex="-1" aria-label="Link to XSRF/CSRF protection">XSRF/CSRF 保护</a>
   </h2>
   <p><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank">跨站请求伪造 (XSRF 或 CSRF)</a> 是一种攻击技术，攻击者可以借此诱骗已通过身份验证的用户在不知情的情况下在你的网站上执行操作。</p>
-<p><code>HttpClient</code> 支持一种用于防止 XSRF 攻击的<a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery#Cookie-to-header_token" target="_blank">常用机制</a>。当执行 HTTP 请求时，拦截器会从 Cookie（默认为 <code>XSRF-TOKEN</code>）中读取令牌，并将其设置为 HTTP 标头 <code>X-XSRF-TOKEN</code>。由于只有在你域名下运行的代码才能读取 Cookie，因此后端可以确定 HTTP 请求来自你的客户端应用，而不是攻击者。</p>
+<p><a href="/api/common/http/HttpClient"><code>HttpClient</code></a> 支持一种 <a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery#Cookie-to-header_token" target="_blank">常用机制</a> 来防止 XSRF 攻击。在执行 HTTP 请求时，拦截器会从 cookie 中读取一个令牌（默认是 <code>XSRF-TOKEN</code>），并将其设置为 HTTP 标头 <code>X-XSRF-TOKEN</code>。由于只有在你域上运行的代码才能读取 cookie，因此后端可以确定该 HTTP 请求来自你的客户端应用程序，而不是来自攻击者。</p>
 <p>默认情况下，拦截器会在所有发送到相对 URL 的变更请求（例如 <code>POST</code>）上发送此标头，但不会在 GET/HEAD 请求或带有绝对 URL 的请求上发送。</p>
 
     <div class="docs-callout docs-callout-helpful">
@@ -49,19 +49,17 @@
   <h3 id="configure-custom-cookie-header-names">
     <a href="#configure-custom-cookie-header-names" class="docs-anchor" tabindex="-1" aria-label="Link to Configure custom cookie/header names">配置自定义 Cookie/标头名称</a>
   </h3>
-  <p>如果你的后端服务对 XSRF 令牌 Cookie 或标头使用了不同的名称，请使用 <code>withXsrfConfiguration</code> 来覆盖默认值。</p>
-<p>如下所示，将其添加到 <code>provideHttpClient</code> 调用中：</p>
+  <p>如果你的后端服务对 XSRF 令牌 cookie 或标头使用不同的名称，请使用 <a href="/api/common/http/withXsrfConfiguration"><code>withXsrfConfiguration</code></a> 来覆盖默认设置。</p>
+<p>将其添加到 <a href="/api/common/http/provideHttpClient"><code>provideHttpClient</code></a> 调用中，如下所示：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> appConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ApplicationConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  providers: [</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    provideHttpClient</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      withXsrfConfiguration</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        cookieName: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'CUSTOM_XSRF_TOKEN'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        headerName: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'X-Custom-Xsrf-Header'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      }),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  ]</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> appConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ApplicationConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  providers: [</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    <a href="/api/common/http/provideHttpClient">provideHttpClient</a></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      <a href="/api/common/http/withXsrfConfiguration">withXsrfConfiguration</a></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        cookieName: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'CUSTOM_XSRF_TOKEN'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">        headerName: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'X-Custom-Xsrf-Header'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      }),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  ]</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span></code></pre>
   </div>
   <h3 id="disabling-xsrf-protection">
     <a href="#disabling-xsrf-protection" class="docs-anchor" tabindex="-1" aria-label="Link to Disabling XSRF protection">禁用 XSRF 保护</a>
   </h3>
-  <p>如果内置的 XSRF 保护机制不适用于你的应用，你可以使用 <code>withNoXsrfProtection</code> 特性来禁用它：</p>
+  <p>如果内置的 XSRF 防护机制不适用于你的应用程序，你可以使用 <a href="/api/common/http/withNoXsrfProtection"><code>withNoXsrfProtection</code></a> 特性来禁用它：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> appConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ApplicationConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  providers: [</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    provideHttpClient</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      withNoXsrfProtection</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  ]</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> const</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> appConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">:</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> ApplicationConfig</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  providers: [</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">    <a href="/api/common/http/provideHttpClient">provideHttpClient</a></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">      <a href="/api/common/http/withNoXsrfProtection">withNoXsrfProtection</a></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    ),</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  ]</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">};</span></span></code></pre>
   </div>

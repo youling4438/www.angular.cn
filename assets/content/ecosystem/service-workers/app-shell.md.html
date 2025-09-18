@@ -27,9 +27,8 @@
       <p>使用以下 Angular CLI 命令执行此操作：</p>
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> new</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> my-app</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> --routing</span></span></code></pre>
-    </pre>
-  </div><p>对于现有应用，你必须手动添加 <code>Router</code> 并在你的应用中定义 <code>&lt;router-outlet&gt;</code>。</p>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> new</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> my-app</span></span></code></pre>
+  </div><p>对于现有应用程序，您必须手动添加 <a href="/api/router/Router"><code>Router</code></a> 并在应用程序中定义一个 <code>&lt;router-outlet&gt;</code>。</p>
 
     </li>
     
@@ -43,25 +42,21 @@
       <p>使用 Angular CLI 自动创建应用外壳。</p>
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> generate</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> app-shell</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> generate</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> app-shell</span></span></code></pre>
   </div><p>有关此命令的更多信息，请参阅<a href="cli/generate/app-shell">应用外壳命令</a>。</p>
 <p>该命令会更新应用代码，并将额外的文件添加到项目结构中。</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>src</span></span><span class="line"><span>├── app</span></span><span class="line"><span>│ ├── app.config.server.ts # server application configuration</span></span><span class="line"><span>│ └── app-shell # app-shell component</span></span><span class="line"><span>│   ├── app-shell.component.html</span></span><span class="line"><span>│   ├── app-shell.component.scss</span></span><span class="line"><span>│   ├── app-shell.component.spec.ts</span></span><span class="line"><span>│   └── app-shell.component.ts</span></span><span class="line"><span>└── main.server.ts # main server application bootstrapping</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span>src</span></span><span class="line"><span>├── app</span></span><span class="line"><span>│ ├── app.config.server.ts # server application configuration</span></span><span class="line"><span>│ └── app-shell # app-shell component</span></span><span class="line"><span>│   ├── app-shell.component.html</span></span><span class="line"><span>│   ├── app-shell.component.scss</span></span><span class="line"><span>│   ├── app-shell.component.spec.ts</span></span><span class="line"><span>│   └── app-shell.component.ts</span></span><span class="line"><span>└── main.server.ts # main server application bootstrapping</span></span></code></pre>
   </div><docs-step title="Verify the application is built with the shell content">
 
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> build</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> --configuration=development</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> build</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> --configuration=development</span></span></code></pre>
   </div><p>或使用生产配置。</p>
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> build</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> build</span></span></code></pre>
   </div><p>要验证构建输出，请打开 <code class="no-auto-link">dist/my-app/browser/index.html</code>。
 查找默认文本 <code>app-shell works!</code> 以表明应用外壳路由已作为输出的一部分进行渲染。</p>
 

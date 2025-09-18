@@ -18,4 +18,4 @@
   </h2>
   <p>查看抛出错误的参数以及该类的所有用法。
 当构造函数使用原始类型（如 <code>string</code>、<code>number</code>、<code>boolean</code> 和 <code>Object</code>）定义参数时，通常会抛出此错误。</p>
-<p>使用来自 <code>@angular/core</code> 的 <code>@Injectable</code> 方法或 <code>@Inject</code> 装饰器，以确保你注入的类型是具体化的（具有运行时表示形式）。确保向此装饰器添加提供者，这样你就不会抛出 <a href="errors/NG0201">NG0201：未找到提供者</a>。</p>
+<p>使用 <code>@angular/core</code> 中的 <a href="/api/core/Injectable"><code>@Injectable</code></a> 方法或 <a href="/api/core/Inject"><code>@Inject</code></a> 装饰器，以确保您注入的类型是具体化的（具有运行时表示）。请确保向此装饰器添加提供者，以免引发 <a href="errors/NG0201">NG0201: No Provider Found</a>。</p>

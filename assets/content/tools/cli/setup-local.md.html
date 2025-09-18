@@ -11,8 +11,8 @@
     </a>
   </div>
     </header>
-    <p>本指南介绍如何使用 <a href="cli" title="CLI" command reference>Angular CLI</a> 为 Angular 开发建立你的环境。
-它包括有关安装 CLI、创建初始工作区和入门应用以及在本地运行该应用以验证你的设置的信息。</p>
+    <p>本指南介绍了如何使用 <a href="cli" title="CLI 命令参考">Angular CLI</a> 为 Angular 开发设置环境。
+它包括有关安装 CLI、创建初始工作区和入门应用以及本地运行该应用以验证设置的信息。</p>
 
     <div class="docs-callout docs-callout-helpful">
       <h3>无需本地设置即可试用 Angular</h3>
@@ -62,20 +62,16 @@ Angular 需要 <a href="https://nodejs.org/en/about/previous-releases" target="_
 <div class="docs-code-multifile">
     <div class="docs-code" header="npm">
     <div class="docs-code-header"><h3>npm</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">npm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">npm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div><div class="docs-code" header="pnpm">
     <div class="docs-code-header"><h3>pnpm</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">pnpm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">pnpm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div><div class="docs-code" header="yarn">
     <div class="docs-code-header"><h3>yarn</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">yarn global add @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">yarn global add @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div><div class="docs-code" header="bun">
     <div class="docs-code-header"><h3>bun</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">bun install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">bun install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div>
     </div>
   <h3 id="powershell-execution-policy">
@@ -85,8 +81,7 @@ Angular 需要 <a href="https://nodejs.org/en/about/previous-releases" target="_
 要允许执行 PowerShell 脚本（npm 全局二进制文件需要这样做），你必须设置以下<a href="https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies">执行策略</a>：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">Set-ExecutionPolicy</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -Scope</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> CurrentUser</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -ExecutionPolicy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> RemoteSigned</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">Set-ExecutionPolicy</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -Scope</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> CurrentUser</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> -ExecutionPolicy</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> RemoteSigned</span></span></code></pre>
   </div><p>仔细阅读执行命令后显示的消息，并按照说明进行操作。确保你了解设置执行策略的含义。</p>
 
   <h3 id="unix-permissions">
@@ -97,20 +92,16 @@ Angular 需要 <a href="https://nodejs.org/en/about/previous-releases" target="_
 <div class="docs-code-multifile">
     <div class="docs-code" header="npm">
     <div class="docs-code-header"><h3>npm</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo npm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo npm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div><div class="docs-code" header="pnpm">
     <div class="docs-code-header"><h3>pnpm</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo pnpm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo pnpm install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div><div class="docs-code" header="yarn">
     <div class="docs-code-header"><h3>yarn</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo yarn global add @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo yarn global add @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div><div class="docs-code" header="bun">
     <div class="docs-code-header"><h3>bun</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo bun install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">sudo bun install </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">g @angular</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">/</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">cli</span></span></code></pre>
   </div>
     </div><p>确保你了解以 root 身份运行命令的含义。</p>
 
@@ -121,16 +112,14 @@ Angular 需要 <a href="https://nodejs.org/en/about/previous-releases" target="_
 <p>要创建一个新的工作区和初始入门应用，请运行 CLI 命令 <code>ng new</code> 并提供名称 <code>my-app</code>，如此处所示，然后回答有关要包含的功能的提示：</p>
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> new</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> my-app</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> new</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> my-app</span></span></code></pre>
   </div><p>Angular CLI 安装必要的 Angular npm 包和其他依赖项。
 这可能需要几分钟。</p>
 <p>CLI 在一个与工作区同名的新目录中创建一个新的工作区和一个小的欢迎应用，随时可以运行。
 导航到新目录，以便后续命令使用此工作区。</p>
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">cd</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> my-app</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">cd</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> my-app</span></span></code></pre>
   </div>
   <h2 id="run-the-application">
     <a href="#run-the-application" class="docs-anchor" tabindex="-1" aria-label="Link to Run the application">运行应用</a>
@@ -138,8 +127,7 @@ Angular 需要 <a href="https://nodejs.org/en/about/previous-releases" target="_
   <p>Angular CLI 包含一个开发服务器，供你在本地构建和启动你的应用。运行以下命令：</p>
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> serve</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> --open</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> serve</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> --open</span></span></code></pre>
   </div><p><code>ng serve</code> 命令启动服务器，监视你的文件，并在你更改这些文件时重建应用并重新加载浏览器。</p>
 <p><code>--open</code>（或仅 <code>-o</code>）选项会自动打开你的浏览器并访问 <code>http://localhost:4200/</code> 以查看生成的应用。</p>
 

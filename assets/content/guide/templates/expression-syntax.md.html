@@ -83,10 +83,6 @@
 <td>RegExp</td>
 <td><code>/\d+/</code></td>
 </tr>
-<tr>
-<td>带标签的模板字符串</td>
-<td><code>tag`Hello ${name}`</code></td>
-</tr>
 
       </tbody>
     </table>
@@ -150,6 +146,10 @@
 <td><code>17 % 5</code></td>
 </tr>
 <tr>
+<td>幂运算</td>
+<td><code>10 ** 3</code></td>
+</tr>
+<tr>
 <td>圆括号</td>
 <td><code>9 * (8 + 4)</code></td>
 </tr>
@@ -171,23 +171,63 @@
 </tr>
 <tr>
 <td>空值合并</td>
-<td><code>const foo = null ?? 'default'</code></td>
+<td><code>possiblyNullValue ?? 'default'</code></td>
 </tr>
 <tr>
 <td>比较运算符</td>
-<td><code>&lt;</code>、<code>&lt;=</code>、<code>&gt;</code>、<code>&gt;=</code>、<code>==</code>、<code>===</code>、<code>!==</code></td>
+<td><code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>==</code>, <code>===</code>, <code>!==</code>, <code>!=</code></td>
 </tr>
 <tr>
 <td>一元取反</td>
-<td><code>const y = -x</code></td>
+<td><code>-x</code></td>
 </tr>
 <tr>
 <td>一元加</td>
-<td><code>const x = +y</code></td>
+<td><code>+y</code></td>
 </tr>
 <tr>
 <td>属性访问器</td>
-<td><code>person['name'] = 'Mirabel'</code></td>
+<td><code>person['name']</code></td>
+</tr>
+<tr>
+<td>赋值</td>
+<td><code>a = b</code></td>
+</tr>
+<tr>
+<td>加法赋值</td>
+<td><code>a += b</code></td>
+</tr>
+<tr>
+<td>减法赋值</td>
+<td><code>a -= b</code></td>
+</tr>
+<tr>
+<td>乘法赋值</td>
+<td><code>a *= b</code></td>
+</tr>
+<tr>
+<td>除法赋值</td>
+<td><code>a /= b</code></td>
+</tr>
+<tr>
+<td>求余赋值</td>
+<td><code>a %= b</code></td>
+</tr>
+<tr>
+<td>幂赋值</td>
+<td><code>a **= b</code></td>
+</tr>
+<tr>
+<td>逻辑与赋值</td>
+<td><code>a &amp;&amp;= b</code></td>
+</tr>
+<tr>
+<td>逻辑或赋值</td>
+<td><code>a ||= b</code></td>
+</tr>
+<tr>
+<td>空值合并赋值</td>
+<td><code>a ??= b</code></td>
 </tr>
 
       </tbody>
@@ -221,8 +261,12 @@
       </tbody>
     </table>
   </div>
-  <p>*注意：可选链式调用的行为与标准 JavaScript 版本不同，如果 Angular 可选链式调用操作符的左侧是 <code>null</code> 或 <code>undefined</code>，它将返回 <code>null</code> 而不是 <code>undefined</code>。</p>
+  
+    <div class="docs-alert docs-alert-note">
+    <p><strong>注意：</strong> Angular 的可选链行为与标准 JavaScript 版本不同，如果可选链运算符的左侧是 <code>null</code> 或 <code>undefined</code>，它将返回 <code>null</code> 而不是 <code>undefined</code>。</p>
 
+    </div>
+    
   <h3 id="unsupported-operators">
     <a href="#unsupported-operators" class="docs-anchor" tabindex="-1" aria-label="Link to Unsupported operators">不支持的操作符</a>
   </h3>
@@ -242,10 +286,6 @@
 <td><code>&amp;</code>、<code>&amp;=</code>、<code>~</code>、<code>|=</code>、<code>^=</code> 等。</td>
 </tr>
 <tr>
-<td>赋值运算符</td>
-<td><code>=</code></td>
-</tr>
-<tr>
 <td>对象解构</td>
 <td><code>const { name } = person</code></td>
 </tr>
@@ -256,18 +296,6 @@
 <tr>
 <td>逗号运算符</td>
 <td><code>x = (x++, x)</code></td>
-</tr>
-<tr>
-<td>typeof</td>
-<td><code>typeof 42</code></td>
-</tr>
-<tr>
-<td>void</td>
-<td><code>void 1</code></td>
-</tr>
-<tr>
-<td>in</td>
-<td><code>'model' in car</code></td>
 </tr>
 <tr>
 <td>instanceof</td>
@@ -286,7 +314,7 @@
     <a href="#lexical-context-for-expressions" class="docs-anchor" tabindex="-1" aria-label="Link to Lexical context for expressions">表达式的词法上下文</a>
   </h2>
   <p>Angular 表达式是在组件类的上下文中求值的，以及任何相关的 <a href="/guide/templates/variables">模板变量</a>、局部变量和全局变量。</p>
-<p>当引用类成员时，总是默认使用 <code>this</code>。</p>
+<p>在引用组件类成员时，总是隐含 <code>this</code>。但是，如果模板声明了一个与成员同名的 <a href="guide/templates/variables">模板变量</a>，该变量就会覆盖该成员。你可以通过显式使用 <code>this.</code> 来明确引用此类成员。这在创建覆盖类成员的 <code>@let</code> 声明时可能很有用，例如用于信号窄化目的。</p>
 
   <h2 id="declarations">
     <a href="#declarations" class="docs-anchor" tabindex="-1" aria-label="Link to Declarations">对象声明</a>
@@ -337,7 +365,7 @@
     </a>
   </div>
     </header>
-    <p>事件处理程序是<strong>语句</strong>而不是表达式。虽然它们支持与 Angular 表达式相同的所有语法，但有两个主要区别：</p>
+    <p>事件处理程序是<strong>语句</strong>而不是表达式。虽然它们支持与 Angular 表达式相同的语法，但存在两个关键区别：</p>
 
     <ol class="docs-ordered-list">
       <li>语句<strong>确实支持</strong>赋值运算符（但不支持解构赋值）</li>

@@ -1,0 +1,117 @@
+<header class="docs-header">
+      <docs-breadcrumb></docs-breadcrumb>
+
+      
+  <!-- Page title -->
+  <div class="docs-page-title">
+    <h1 tabindex="-1">使用 Chrome DevTools 进行性能分析</h1>
+    <a class="docs-github-links" target="_blank" href="https://github.com/angular/angular/edit/main/adev/src/content/best-practices/runtime-performance/profiling-with-chrome-devtools.md" title="Edit this page" aria-label="Edit this page">
+      <!-- Pencil -->
+      <docs-icon role="presentation">edit</docs-icon>
+    </a>
+  </div>
+    </header>
+    <p>Angular 与 <a href="https://developer.chrome.com/docs/devtools/performance/extension" target="_blank">Chrome DevTools 可扩展性 API</a> 集成，可直接在 <a href="https://developer.chrome.com/docs/devtools/performance/overview" target="_blank">Chrome DevTools 性能面板</a> 中展示框架特定的数据和见解。</p>
+<p>启用集成后，您可以 <a href="https://developer.chrome.com/docs/devtools/performance#record" target="_blank">记录一个性能配置文件</a>，其中包含两组数据：</p>
+
+  <ul class="docs-list">
+    <li>基于 Chrome 对您在浏览器中执行的代码的理解的标准性能条目，以及</li>
+<li>由框架运行时贡献的 Angular 特定条目。</li>
+
+  </ul>
+  <p>两组数据一起显示在同一个选项卡上，但位于不同的轨道上：</p>
+<img alt="Angular custom track in Chrome DevTools profiler" src="assets/images/best-practices/runtime-performance/angular-perf-in-chrome.png">
+
+<p>Angular 特定的数据以框架概念（组件、变更检测、生命周期钩子等）来表达，并伴随着浏览器捕获的低级函数和方法调用。这两组数据是相关的，您可以切换不同的视图和详细程度。</p>
+<p>您可以使用 Angular 轨道更好地了解您的代码在浏览器中的运行方式，包括：</p>
+
+  <ul class="docs-list">
+    <li>确定给定的代码块是否是 Angular 应用的一部分，或者它是否属于在同一页面上运行的另一个脚本。</li>
+<li>识别性能瓶颈并将它们归因于特定的组件或服务。</li>
+<li>通过对每个变更检测周期进行可视化分解，深入了解 Angular 的内部工作原理。</li>
+
+  </ul>
+  
+  <h2 id="recording-a-profile">
+    <a href="#recording-a-profile" class="docs-anchor" tabindex="-1" aria-label="Link to Recording a profile">记录配置文件</a>
+  </h2>
+  
+  <h3 id="enable-integration">
+    <a href="#enable-integration" class="docs-anchor" tabindex="-1" aria-label="Link to Enable integration">启用集成</a>
+  </h3>
+  <p>您可以通过以下两种方式之一启用 Angular 性能分析：</p>
+
+    <ol class="docs-ordered-list">
+      <li>在 Chrome 的控制台面板中运行 <code>ng.enableProfiling()</code>，或者</li>
+<li>在您的应用程序启动代码中包含对 <code>enableProfiling()</code> 的调用（从 <code>@angular/core</code> 导入）。</li>
+
+    </ol>
+    <p>注意：
+Angular 性能分析仅在开发模式下工作。</p>
+<p>以下是如何在应用程序引导中启用集成以捕获所有可能事件的示例：</p>
+<div class="docs-code">
+    
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { enableProfiling } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> '@angular/core'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { <a href="/api/platform-browser/bootstrapApplication">bootstrapApplication</a> } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> '@angular/platform-browser'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">import</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> { MyApp } </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">from</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> './my-app'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span><span class="line"></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// Turn on profiling *before* bootstrapping your application</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">// in order to capture all of the code run on start-up.</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">enableProfiling</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">();</span></span><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"><a href="/api/platform-browser/bootstrapApplication">bootstrapApplication</a></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(MyApp);</span></span></code></pre>
+  </div>
+  <h3 id="record-a-profile">
+    <a href="#record-a-profile" class="docs-anchor" tabindex="-1" aria-label="Link to Record a profile">记录配置文件</a>
+  </h3>
+  <p>使用 Chrome DevTools 性能面板中的<strong>记录</strong>按钮：</p>
+<img alt="Recording a profile" src="assets/images/best-practices/runtime-performance/recording-profile-in-chrome.png">
+
+<p>有关记录配置文件的更多详细信息，请参阅 <a href="https://developer.chrome.com/docs/devtools/performance#record" target="_blank">Chrome DevTools 文档</a>。</p>
+
+  <h2 id="interpreting-a-recorded-profile">
+    <a href="#interpreting-a-recorded-profile" class="docs-anchor" tabindex="-1" aria-label="Link to Interpreting a recorded profile">解释记录的配置文件</a>
+  </h2>
+  <p>您可以使用“Angular”自定义轨道来快速识别和诊断性能问题。以下各节描述了一些常见的性能分析场景。</p>
+
+  <h3 id="differentiating-between-your-angular-application-and-other-tasks-on-the-same-page">
+    <a href="#differentiating-between-your-angular-application-and-other-tasks-on-the-same-page" class="docs-anchor" tabindex="-1" aria-label="Link to Differentiating between your Angular application and other tasks on the same page">区分您的 Angular 应用与其他在同一页面上的任务</a>
+  </h3>
+  <p>由于 Angular 和 Chrome 数据显示在分开但相关的轨道上，您可以看到 Angular 的应用代码何时执行，以及与其他浏览器处理（通常是布局和绘制）或在同一页面上运行的其他脚本（在这种情况下，自定义 Angular 轨道没有任何数据）的执行情况：</p>
+<img alt="Profile data: Angular vs. 3rd party scripts execution" src="assets/images/best-practices/runtime-performance/profile-angular-vs-3rd-party.png">
+
+<p>这使您能够确定后续调查应侧重于 Angular 应用代码还是您代码库的其他部分或依赖项。</p>
+
+  <h3 id="color-coding">
+    <a href="#color-coding" class="docs-anchor" tabindex="-1" aria-label="Link to Color-coding">颜色编码</a>
+  </h3>
+  <p>Angular 在火焰图中使用颜色来区分任务类型：</p>
+
+  <ul class="docs-list">
+    <li><span class="docs-emoji">🟦 蓝色代表应用程序开发人员编写的 TypeScript 代码（例如：服务、组件构造函数和生命周期钩子等）。</span></li>
+<li><span class="docs-emoji">🟪 紫色代表应用程序开发人员编写并由 Angular 编译器转换的模板代码。</span></li>
+<li><span class="docs-emoji"><span class="docs-emoji">🟩 绿色代表应用程序代码的入口点并标识执行代码的</span><em>原因</em>。</span></li>
+
+  </ul>
+  <p>以下示例在各种实际录制中说明了所描述的颜色编码。</p>
+
+  <h4 id="example-application-bootstrapping">
+    <a href="#example-application-bootstrapping" class="docs-anchor" tabindex="-1" aria-label="Link to Example: Application bootstrapping">示例：应用程序引导</a>
+  </h4>
+  <p>应用程序引导过程通常包括：</p>
+
+  <ul class="docs-list">
+    <li>以蓝色标记的触发器，例如对 <a href="/api/platform-browser/bootstrapApplication"><code>bootstrapApplication</code></a> 的调用、根组件的实例化以及初始变更检测</li>
+<li>引导过程中实例化的各种 DI 服务，以绿色标记。</li>
+
+  </ul>
+  <img alt="Profile data: bootstrap application" src="assets/images/best-practices/runtime-performance/profile-bootstrap-application.png">
+
+
+  <h4 id="example-component-execution">
+    <a href="#example-component-execution" class="docs-anchor" tabindex="-1" aria-label="Link to Example: Component execution">示例：组件执行</a>
+  </h4>
+  <p>一个组件处理通常表示为一个入口点（蓝色），然后是其模板执行（紫色）。模板反过来可能会触发指令的实例化和生命周期钩子的执行（绿色）：</p>
+<img alt="Profile data: component processing" src="assets/images/best-practices/runtime-performance/profile-component-processing.png">
+
+
+  <h4 id="example-change-detection">
+    <a href="#example-change-detection" class="docs-anchor" tabindex="-1" aria-label="Link to Example: Change detection">示例：变更检测</a>
+  </h4>
+  <p>变更检测周期通常由一个或多个数据同步传递（蓝色）组成，每次传递遍历一部分组件。</p>
+<img alt="Profile data: change detection" src="assets/images/best-practices/runtime-performance/profile-change-detection.png">
+
+<p>通过这种数据可视化，可以立即识别参与变更检测的组件以及被跳过的组件（通常是未标记为脏的 <code>OnPush</code> 组件）。</p>
+<p>此外，您可以检查一次变更检测的同步传递次数。超过一次同步传递表明状态在变更检测期间被更新。您应该避免这种情况，因为它会减慢页面更新速度，在最坏的情况下甚至可能导致无限循环。</p>

@@ -55,52 +55,38 @@
 
       </div>
     </div>
-    <p>在单页面应用中，你可以通过显示或隐藏与特定组件对应的显示部分来更改用户所看到的内容，而不是去服务器获取新页面。</p>
-<p>当用户执行应用任务时，他们需要在你定义的不同视图之间移动。</p>
-<p>要处理从一个视图到下一个视图的导航，你可以使用 Angular 的 <strong><code>Router</code></strong>。
-<strong><code>Router</code></strong> 通过将浏览器 URL 解释为更改视图的指令来实现导航。</p>
+    <p>Angular Router (<code>@angular/router</code>) 是管理 Angular 应用中导航的官方库，也是框架的核心部分。它默认包含在所有由 Angular CLI 创建的项目中。</p>
 
-  <h2 id="learn-about-angular-routing">
-    <a href="#learn-about-angular-routing" class="docs-anchor" tabindex="-1" aria-label="Link to Learn about Angular routing">了解 Angular 路由</a>
+  <h2 id="why-is-routing-necessary-in-a-spa">
+    <a href="#why-is-routing-necessary-in-a-spa" class="docs-anchor" tabindex="-1" aria-label="Link to Why is routing necessary in a SPA?">为什么 SPA 中需要路由？</a>
   </h2>
+  <p>当你在网页浏览器中导航到某个 URL 时，浏览器通常会向 Web 服务器发出网络请求并显示返回的 HTML 页面。当你导航到另一个 URL（例如单击链接）时，浏览器会发出另一个网络请求，并用新页面替换整个页面。</p>
+<p>单页应用 (SPA) 的不同之处在于，浏览器仅对第一个页面 <code>index.html</code> 向 Web 服务器发出请求。之后，客户端路由器接管，根据 URL 控制显示哪些内容。当用户导航到其他 URL 时，路由器会就地更新页面的内容，而不会触发完全的页面重新加载。</p>
+
+  <h2 id="how-angular-manages-routing">
+    <a href="#how-angular-manages-routing" class="docs-anchor" tabindex="-1" aria-label="Link to How Angular manages routing">Angular 如何管理路由</a>
+  </h2>
+  <p>Angular 中的路由包含三个主要部分：</p>
+
+    <ol class="docs-ordered-list">
+      <li><strong>路由</strong>定义了用户访问特定 URL 时显示的组件。</li>
+<li><strong>出口</strong>是模板中的占位符，它们根据活动路由动态加载和渲染组件。</li>
+<li><strong>链接</strong>为用户提供了一种在应用的不同路由之间导航的方式，而无需触发完全的页面重新加载。</li>
+
+    </ol>
+    <p>此外，Angular 路由库还提供其他功能，例如：</p>
+
+  <ul class="docs-list">
+    <li>嵌套路由</li>
+<li>编程导航</li>
+<li>路由参数、查询和通配符</li>
+<li>通过 <a href="/api/router/ActivatedRoute"><code>ActivatedRoute</code></a> 获取激活路由信息</li>
+<li>视图过渡效果</li>
+<li>导航守卫</li>
+
+  </ul>
   
-    <div class="docs-card-grid">
-      
-    <a href="guide/routing/common-router-tasks" class="docs-card">
-      <div>
-        <h3>常用路由任务</h3>
-        <p>了解如何实现与 Angular 路由相关的许多常用任务。</p>
-
-      </div>
-      <span>了解更多</span>
-    </a>
-    
-    <a href="guide/routing/router-tutorial" class="docs-card">
-      <div>
-        <h3>路由 SPA 指南</h3>
-        <p>一个涵盖与 Angular 路由相关的模式的指南。</p>
-
-      </div>
-      <span>了解更多</span>
-    </a>
-    
-    <a href="guide/routing/routing-with-urlmatcher" class="docs-card">
-      <div>
-        <h3>创建自定义路由匹配指南</h3>
-        <p>一个涵盖如何将自定义匹配策略模式与 Angular 路由一起使用的指南。</p>
-
-      </div>
-      <span>了解更多</span>
-    </a>
-    
-    <a href="guide/routing/router-reference" class="docs-card">
-      <div>
-        <h3>Router 参考</h3>
-        <p>描述了一些核心 Router API 概念。</p>
-
-      </div>
-      <span>了解更多</span>
-    </a>
-    
-    </div>
-    
+  <h2 id="next-steps">
+    <a href="#next-steps" class="docs-anchor" tabindex="-1" aria-label="Link to Next steps">后续步骤</a>
+  </h2>
+  <p>了解如何 <a href="/guide/routing/define-routes">使用 Angular 路由器定义路由</a>。</p>

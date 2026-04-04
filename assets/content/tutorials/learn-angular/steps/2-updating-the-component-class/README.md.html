@@ -12,6 +12,7 @@
   </div>
     </header>
     <p>在 Angular 中，组件的逻辑和行为是在组件的 TypeScript 类中定义的。</p>
+<p>注意：在基础指南中了解更多关于<a href="/essentials/templates#showing-dynamic-text">显示动态文本</a>的信息。</p>
 <p>在本活动中，你将学习如何更新组件类以及如何使用<a href="/guide/templates/binding#render-dynamic-text-with-text-interpolation">插值</a>。</p>
 <hr>
 
@@ -25,12 +26,11 @@
     <a href="#add-a-property-called-city" class="docs-anchor" tabindex="-1" aria-label="Link to Add a property called <code>city</code>">添加一个名为 <code>city</code> 的属性</a>
   </h3>
   
-      <p>通过向 <code>AppComponent</code> 类添加一个名为 <code>city</code> 的属性来更新组件类。</p>
+      <p>通过向 <code>App</code> 类添加一个名为 <code>city</code> 的属性来更新组件类。</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> AppComponent</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span><span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">  city</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'San Francisco'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
-    </pre>
-  </div><p><code>city</code> 属性的类型为 <code>string</code>，但由于 <a href="https://www.typescriptlang.org/docs/handbook/type-inference.html" target="_blank">TypeScript 中的类型推断</a>，你可以省略类型。<code>city</code> 属性可以在 <code>AppComponent</code> 类中使用，也可以在组件模板中引用。</p>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> App</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span><span class="line"><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70">  city</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'San Francisco'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+  </div><p><code>city</code> 属性的类型是 <code>string</code>，但由于 TypeScript 中的<a href="https://www.typescriptlang.org/docs/handbook/type-inference.html" target="_blank">类型推断</a>，您可以省略该类型。<code>city</code> 属性可以在 <code>App</code> 类中使用，并可以在组件模板中引用。</p>
 <br>
 
 <p>要在模板中使用类属性，你必须使用 <code>{{ }}</code> 语法。</p>
@@ -47,8 +47,7 @@
       <p>更新 <code>template</code> 属性以匹配以下 HTML：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`Hello {{ city }}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`Hello {{ city }}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span></code></pre>
   </div><p>这是插值的一个范例，也是 Angular 模板语法的一部分。它使你能够做更多的事情，而不仅仅是在模板中放置动态文本。你还可以使用此语法来调用函数、编写表达式等等。</p>
 
     </li>
@@ -63,8 +62,7 @@
       <p>试试这个 - 添加另一组 <code>{{ }}</code>，内容为 <code>1 + 1</code>：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`Hello {{ city }}, {{ 1 + 1 }}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">template</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`Hello {{ city }}, {{ 1 + 1 }}`</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span></code></pre>
   </div><p>Angular 会求值 <code>{{ }}</code> 的内容，并在模板中渲染输出。</p>
 
     </li>

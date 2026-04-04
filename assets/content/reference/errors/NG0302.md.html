@@ -21,7 +21,7 @@
 
   <ul class="docs-list">
     <li>确保模板中使用的名称与管道装饰器中定义的名称匹配。</li>
-<li>将管道添加到组件的 <code>imports</code> 数组中；或者，如果管道设置了 <code>standalone: false</code>，则将管道所属的 <code>NgModule</code> 添加到组件的 <code>imports</code> 数组中。</li>
+<li>将管道添加到组件的 <code>imports</code> 数组中，或者，如果管道设置了 <code>standalone: false</code>，则添加管道所属的 <a href="/api/core/NgModule"><code>NgModule</code></a>。</li>
 
   </ul>
   
@@ -32,8 +32,8 @@
 <p>要解决此错误，请执行以下操作：</p>
 
   <ul class="docs-list">
-    <li>如果管道是 <code>NgModule</code> 本地的，请在管道的装饰器中为其指定一个唯一的名称，并在该 <code>NgModule</code> 中声明它。</li>
-<li>如果管道是独立的或在另一个 <code>NgModule</code> 中声明的，请将其添加到独立组件或当前 <code>NgModule</code> 的 <code>imports</code> 字段中。</li>
+    <li>如果管道是某个 <a href="/api/core/NgModule"><code>NgModule</code></a> 的本地管道，请在管道的装饰器中为其指定一个唯一名称，并在该 <a href="/api/core/NgModule"><code>NgModule</code></a> 中声明它。</li>
+<li>如果管道是独立的，或者声明在另一个 <a href="/api/core/NgModule"><code>NgModule</code></a> 中，请将其添加到独立组件或当前 <a href="/api/core/NgModule"><code>NgModule</code></a> 的 <code>imports</code> 字段中。</li>
 
   </ul>
   <p>如果你最近添加了导入或声明，则可能需要重启服务器才能看到这些更改。</p>

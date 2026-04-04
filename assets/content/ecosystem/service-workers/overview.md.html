@@ -11,6 +11,11 @@
     </a>
   </div>
     </header>
+    
+    <div class="docs-alert docs-alert-important">
+    <p><strong>重要提示：</strong> Angular Service Worker 是一个基本的缓存工具，用于简单的离线支持，功能集有限。除安全修复外，我们不接受任何新功能。有关更高级的缓存和离线功能，我们建议直接探索原生浏览器 API。</p>
+
+    </div>
     <p>Service Worker 增强了传统的 Web 部署模型，并使应用能够交付用户体验，这种用户体验在可靠性和性能方面与为在你的操作系统和硬件上运行而编写的代码不相上下。
 将 Service Worker 添加到 Angular 应用是将应用转变为 <a href="https://web.dev/progressive-web-apps/" target="_blank">渐进式 Web 应用</a>（也称为 PWA）的步骤之一。</p>
 <p>最简单来说，Service Worker 是一个在 Web 浏览器中运行的脚本，用于管理应用的缓存。</p>
@@ -78,14 +83,14 @@
 
   <ul class="docs-list">
     <li>浏览器不会下载 Service Worker 脚本和 <code>ngsw.json</code> 清单文件</li>
-<li>与 Service Worker 进行交互的活动尝试（例如调用 <code>SwUpdate.checkForUpdate()</code>）会返回被拒绝的 Promise</li>
-<li>相关服务的可观察者事件（例如 <code>SwUpdate.available</code>）不会被触发</li>
+<li>与 Service Worker 交互的活动尝试，例如调用 <a href="/api/service-worker/SwUpdate#checkForUpdate"><code>SwUpdate.checkForUpdate()</code></a>，会返回被拒绝的 Promise</li>
+<li>相关服务的可观察事件，例如 <a href="/api/service-worker/SwUpdate#available"><code>SwUpdate.available</code></a>，不会被触发</li>
 
   </ul>
-  <p>强烈建议你确保即使在浏览器中没有 Service Worker 支持的情况下，你的应用也能正常工作。
-尽管不受支持的浏览器会忽略 Service Worker 缓存，但如果应用尝试与 Service Worker 交互，它仍然会报告错误。
-例如，调用 <code>SwUpdate.checkForUpdate()</code> 会返回被拒绝的 Promise。
-为避免此类错误，请使用 <code>SwUpdate.isEnabled</code> 检查是否启用了 Angular Service Worker。</p>
+  <p>强烈建议您确保您的应用程序即使在浏览器不支持 Service Worker 的情况下也能正常工作。
+虽然不支持的浏览器会忽略 Service Worker 缓存，但如果应用程序尝试与 Service Worker 交互，它仍然会报告错误。
+例如，调用 <a href="/api/service-worker/SwUpdate#checkForUpdate"><code>SwUpdate.checkForUpdate()</code></a> 会返回被拒绝的 Promise。
+为避免此类错误，请使用 <a href="/api/service-worker/SwUpdate#isEnabled"><code>SwUpdate.isEnabled</code></a> 检查 Angular Service Worker 是否已启用。</p>
 <p>要了解有关其他支持 Service Worker 的浏览器的更多信息，请参阅 <a href="https://caniuse.com/#feat=serviceworkers" target="_blank">Can I Use</a> 页面和 <a href="https://developer.mozilla.org/docs/Web/API/Service_Worker_API" target="_blank">MDN 文档</a>。</p>
 
   <h2 id="related-resources">

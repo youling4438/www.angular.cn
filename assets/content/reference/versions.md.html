@@ -31,6 +31,18 @@
       </thead>
       <tbody>
         <tr>
+<td>20.2.x || 20.3.x</td>
+<td>^20.19.0 || ^22.12.0 || ^24.0.0</td>
+<td>&gt;=5.9.0 &lt;6.0.0</td>
+<td>^6.5.3 || ^7.4.0</td>
+</tr>
+<tr>
+<td>20.0.x || 20.1.x</td>
+<td>^20.19.0 || ^22.12.0 || ^24.0.0</td>
+<td>&gt;=5.8.0 &lt;5.9.0</td>
+<td>^6.5.3 || ^7.4.0</td>
+</tr>
+<tr>
 <td>19.2.x</td>
 <td>^18.19.1 || ^20.11.1 || ^22.0.0</td>
 <td>&gt;=5.5.0 &lt;5.9.0</td>
@@ -60,24 +72,6 @@
 <td>&gt;=5.4.0 &lt;5.5.0</td>
 <td>^6.5.3 || ^7.4.0</td>
 </tr>
-<tr>
-<td>17.3.x</td>
-<td>^18.13.0 || ^20.9.0</td>
-<td>&gt;=5.2.0 &lt;5.5.0</td>
-<td>^6.5.3 || ^7.4.0</td>
-</tr>
-<tr>
-<td>17.1.x || 17.2.x</td>
-<td>^18.13.0 || ^20.9.0</td>
-<td>&gt;=5.2.0 &lt;5.4.0</td>
-<td>^6.5.3 || ^7.4.0</td>
-</tr>
-<tr>
-<td>17.0.x</td>
-<td>^18.13.0 || ^20.9.0</td>
-<td>&gt;=5.2.0 &lt;5.3.0</td>
-<td>^6.5.3 || ^7.4.0</td>
-</tr>
 
       </tbody>
     </table>
@@ -101,6 +95,24 @@
       </thead>
       <tbody>
         <tr>
+<td>17.3.x</td>
+<td>^18.13.0 || ^20.9.0</td>
+<td>&gt;=5.2.0 &lt;5.5.0</td>
+<td>^6.5.3 || ^7.4.0</td>
+</tr>
+<tr>
+<td>17.1.x || 17.2.x</td>
+<td>^18.13.0 || ^20.9.0</td>
+<td>&gt;=5.2.0 &lt;5.4.0</td>
+<td>^6.5.3 || ^7.4.0</td>
+</tr>
+<tr>
+<td>17.0.x</td>
+<td>^18.13.0 || ^20.9.0</td>
+<td>&gt;=5.2.0 &lt;5.3.0</td>
+<td>^6.5.3 || ^7.4.0</td>
+</tr>
+<tr>
 <td>16.1.x || 16.2.x</td>
 <td>^16.14.0 || ^18.10.0</td>
 <td>&gt;=4.9.3 &lt;5.2.0</td>
@@ -335,8 +347,30 @@
   <h2 id="browser-support">
     <a href="#browser-support" class="docs-anchor" tabindex="-1" aria-label="Link to Browser support">浏览器支持</a>
   </h2>
-  <p>Angular 支持大多数最新版本的浏览器。
-其中包括以下特定版本：</p>
+  <p>Angular 使用 <a href="https://web.dev/baseline" target="_blank">“广泛可用”基线</a>来定义浏览器支持。对于每个主版本，Angular 支持在选定的日期接近该主版本发布日期时包含在基线中的浏览器。</p>
+<p>“广泛可用”基线包括在选定日期（在基线核心浏览器集（Chrome、Edge、Firefox、Safari）内）前 30 个月（2.5 年）内发布的浏览器，并以支持约 95% 的网络用户为目标。</p>
+
+  <div class="docs-table docs-scroll-track-transparent">
+    <table>
+      <thead>
+        <tr>
+<th>Angular</th>
+<th>基线日期</th>
+<th>浏览器集</th>
+</tr>
+
+      </thead>
+      <tbody>
+        <tr>
+<td>v20</td>
+<td>2025-04-30</td>
+<td><a href="https://web-platform-dx.github.io/web-features/supported-browsers/?widelyAvailableOnDate=2025-04-30&amp;includeDownstream=false" target="_blank">浏览器集</a></td>
+</tr>
+
+      </tbody>
+    </table>
+  </div>
+  <p>v20 之前的 Angular 版本支持以下特定浏览器版本：</p>
 
   <div class="docs-table docs-scroll-track-transparent">
     <table>
@@ -377,11 +411,6 @@
     </table>
   </div>
   
-    <div class="docs-alert docs-alert-helpful">
-    <p><strong>提示：</strong> Angular 的持续集成过程在所有这些浏览器上，针对每个 Pull Request 运行该框架的单元测试，使用的是 <a href="https://saucelabs.com" target="_blank">Sauce Labs</a>。</p>
-
-    </div>
-    
   <h2 id="polyfills">
     <a href="#polyfills" class="docs-anchor" tabindex="-1" aria-label="Link to Polyfills">腻子脚本</a>
   </h2>
@@ -410,8 +439,7 @@
 <p>如果你创建了一个 TypeScript 文件，请确保将其包含在 <code>tsconfig</code> 文件的 <code>files</code> 属性中。</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "extends"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"./tsconfig.json"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "compilerOptions"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">    ...</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  },</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "files"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span><span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "src/main.ts"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "src/polyfills.ts"</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  ]</span></span><span class="line"><span style="--shiki-light:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">  ...</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "extends"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"./tsconfig.json"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "compilerOptions"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">    ...</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  },</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "files"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span><span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "src/main.ts"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">    "src/polyfills.ts"</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  ]</span></span><span class="line"><span style="--shiki-light:#B31D28;--shiki-light-font-style:italic;--shiki-dark:#FDAEB7;--shiki-dark-font-style:italic">  ...</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
   </div>
   <h2 id="polyfills-for-non-cli-users">
     <a href="#polyfills-for-non-cli-users" class="docs-anchor" tabindex="-1" aria-label="Link to Polyfills for non-CLI users">非 CLI 用户的腻子脚本</a>
@@ -420,6 +448,5 @@
 <p>例如：</p>
 <div class="docs-code" header="src/index.html">
     <div class="docs-code-header"><h3>src/index.html</h3></div>
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">&lt;!-- pre-zone polyfills --&gt;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"node_modules/core-js/client/shim.min.js"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  /**</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * you can configure some zone flags which can disable zone interception for some</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * asynchronous activities to improve startup performance - use these options only</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * if you know what you are doing as it could result in hard to trace down bugs.</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   */</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __Zone_disable_on_property = true; // disable patch onProperty such as onclick</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  /*</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * in Edge developer tools, the addEventListener will also be wrapped by zone.js</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * with the following flag, it will bypass `zone.js` patch for Edge.</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   */</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __Zone_enable_cross_context_check = true;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">&lt;!-- zone.js required by Angular --&gt;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"node_modules/zone.js/bundles/zone.umd.js"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">&lt;!-- application polyfills --&gt;</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">&lt;!-- pre-zone polyfills --&gt;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"node_modules/core-js/client/shim.min.js"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  /**</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * you can configure some zone flags which can disable zone interception for some</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * asynchronous activities to improve startup performance - use these options only</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * if you know what you are doing as it could result in hard to trace down bugs.</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   */</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __Zone_disable_on_property = true; // disable patch onProperty such as onclick</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  /*</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * in Edge developer tools, the addEventListener will also be wrapped by zone.js</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   * with the following flag, it will bypass `zone.js` patch for Edge.</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">   */</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // __Zone_enable_cross_context_check = true;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">&lt;!-- zone.js required by Angular --&gt;</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&lt;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> src</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"node_modules/zone.js/bundles/zone.umd.js"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;&lt;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">script</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&gt;</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">&lt;!-- application polyfills --&gt;</span></span></code></pre>
   </div>

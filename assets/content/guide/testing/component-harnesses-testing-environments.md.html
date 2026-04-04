@@ -37,25 +37,24 @@
   <h3 id="cdk-installation">
     <a href="#cdk-installation" class="docs-anchor" tabindex="-1" aria-label="Link to CDK Installation">CDK 安装</a>
   </h3>
-  <p><a href="https://material.angular.io/cdk/categories" target="_blank">组件开发工具包 (CDK)</a> 是一组用于构建组件的行为原语。要使用组件测试工具，请首先从 npm 安装 <code>@angular/cdk</code>。你可以使用 Angular CLI 从终端执行此操作：</p>
+  <p><a href="https://material.angular.dev/cdk/categories" target="_blank">组件开发工具包 (CDK)</a> 是一组用于构建组件的行为基元。要使用组件 harnesses，请首先从 npm 安装 <code>@angular/cdk</code>。您可以使用 Angular CLI 从终端执行此操作：</p>
 <div class="docs-code shell">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> @angular/cdk</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">ng</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> add</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> @angular/cdk</span></span></code></pre>
   </div>
   <h2 id="creating-a-testelement-implementation">
     <a href="#creating-a-testelement-implementation" class="docs-anchor" tabindex="-1" aria-label="Link to Creating a <code>TestElement</code> implementation">创建 <code>TestElement</code> 实现</a>
   </h2>
-  <p>每个测试环境都必须定义一个 <code>TestElement</code> 实现。<code>TestElement</code> 接口充当 DOM 元素的环境无关表示。它使测试工具能够与 DOM 元素进行交互，而无需考虑底层环境。由于某些环境不支持与 DOM 元素同步交互（例如 WebDriver），因此所有 <code>TestElement</code> 方法都是异步的，并返回一个 <code>Promise</code>，其中包含操作的结果。</p>
-<p><code>TestElement</code> 提供了许多与底层 DOM 交互的方法，例如 <code>blur()</code>、<code>click()</code>、<code>getAttribute()</code> 等。 有关方法的完整列表，请参阅<a href="https://material.angular.io/cdk/testing/api#TestElement" target="_blank">TestElement API 参考页</a>。</p>
-<p><code>TestElement</code> 接口主要由类似于 <code>HTMLElement</code> 上可用方法的方法组成。大多数测试环境中都存在类似的方法，这使得方法的实现非常简单。但是，在实现 <code>sendKeys</code> 方法时，需要注意一个重要的区别，即 <code>TestKey</code> 枚举中的键代码可能与测试环境中使用的键代码不同。环境作者应维护从 <code>TestKey</code> 代码到特定测试环境中使用的代码的映射表。</p>
-<p>Angular CDK 中的 <a href="https://github.com/angular/components/blob/main/src/cdk/testing/testbed/unit-test-element.ts#L33" target="_blank">UnitTestElement</a> 和 <a href="https://github.com/angular/components/blob/main/src/cdk/testing/selenium-webdriver/selenium-webdriver-keys.ts#L16" target="_blank">SeleniumWebDriverElement</a> 实现是此接口实现的良好范例。</p>
+  <p>每个测试环境都必须定义一个 <a href="/api/cdk/testing/TestElement"><code>TestElement</code></a> 实现。 <a href="/api/cdk/testing/TestElement"><code>TestElement</code></a> 接口作为 DOM 元素的独立于环境的表示。它使 harnesses 能够与 DOM 元素进行交互，而无需考虑底层环境。由于某些环境不支持同步与 DOM 元素进行交互（例如 WebDriver），因此所有 <a href="/api/cdk/testing/TestElement"><code>TestElement</code></a> 方法都是异步的，它们返回一个包含操作结果的 <code>Promise</code>。</p>
+<p><a href="/api/cdk/testing/TestElement"><code>TestElement</code></a> 提供了许多与底层 DOM 交互的方法，例如 <code>blur()</code>、<code>click()</code>、<code>getAttribute()</code> 等。有关方法的完整列表，请参阅 <a href="/api/cdk/testing/TestElement">TestElement API 参考页</a>。</p>
+<p><a href="/api/cdk/testing/TestElement"><code>TestElement</code></a> 接口主要包含与 <code>HTMLElement</code> 类似的方法。大多数测试环境都存在类似的方法，这使得实现这些方法相当直接。但是，在实现 <code>sendKeys</code> 方法时，一个重要的区别是 <a href="/api/cdk/testing/TestKey"><code>TestKey</code></a> 枚举中的键码可能与测试环境中使用的键码不同。环境作者应维护从 <a href="/api/cdk/testing/TestKey"><code>TestKey</code></a> 码到特定测试环境中使用的码的映射。</p>
+<p>Angular CDK 中的 <a href="/api/cdk/testing/testbed/UnitTestElement">UnitTestElement</a> 和 <a href="/api/cdk/testing/selenium-webdriver/SeleniumWebDriverElement">SeleniumWebDriverElement</a> 实现是此接口实现的良好示例。</p>
 
   <h2 id="creating-a-harnessenvironment-implementation">
     <a href="#creating-a-harnessenvironment-implementation" class="docs-anchor" tabindex="-1" aria-label="Link to Creating a <code>HarnessEnvironment</code> implementation">创建 <code>HarnessEnvironment</code> 实现</a>
   </h2>
-  <p>测试作者使用 <code>HarnessEnvironment</code> 创建组件测试工具实例以用于测试。<code>HarnessEnvironment</code> 是一个抽象类，必须对其进行扩展才能为新环境创建具体的子类。当支持新的测试环境时，请创建一个 <code>HarnessEnvironment</code> 子类，该子类为所有抽象成员添加具体实现。</p>
-<p><code>HarnessEnvironment</code> 具有一个泛型类型参数：<code>HarnessEnvironment&lt;E&gt;</code>。 此参数 <code>E</code> 表示环境的原始元素类型。 例如，对于单元测试环境，此参数是 Element。</p>
+  <p>测试作者使用 <a href="/api/cdk/testing/HarnessEnvironment"><code>HarnessEnvironment</code></a> 来创建组件 harness 实例以供测试使用。 <a href="/api/cdk/testing/HarnessEnvironment"><code>HarnessEnvironment</code></a> 是一个抽象类，必须对其进行扩展以创建新环境的具体子类。在支持新的测试环境时，请创建一个 <a href="/api/cdk/testing/HarnessEnvironment"><code>HarnessEnvironment</code></a> 子类，为所有抽象成员添加具体实现。</p>
+<p><a href="/api/cdk/testing/HarnessEnvironment"><code>HarnessEnvironment</code></a> 有一个泛型类型参数：<code>HarnessEnvironment&lt;E&gt;</code>。此参数 <code>E</code> 代表环境的原始元素类型。例如，对于单元测试环境，此参数为 Element。</p>
 <p>以下是必须实现的抽象方法：</p>
 
   <div class="docs-table docs-scroll-track-transparent">
@@ -74,11 +73,11 @@
 </tr>
 <tr>
 <td align="left"><code>abstract createTestElement(element: E): TestElement</code></td>
-<td align="left">为给定的原始元素创建 <code>TestElement</code>。</td>
+<td align="left">为给定的原始元素创建 <a href="/api/cdk/testing/TestElement"><code>TestElement</code></a>。</td>
 </tr>
 <tr>
 <td align="left"><code>abstract createEnvironment(element: E): HarnessEnvironment</code></td>
-<td align="left">创建以给定原始元素为根的 <code>HarnessEnvironment</code>。</td>
+<td align="left">创建以给定原始元素为根的 <a href="/api/cdk/testing/HarnessEnvironment"><code>HarnessEnvironment</code></a>。</td>
 </tr>
 <tr>
 <td align="left"><code>abstract getAllRawElements(selector: string): Promise&lt;E[]&gt;</code></td>
@@ -86,22 +85,22 @@
 </tr>
 <tr>
 <td align="left"><code>abstract forceStabilize(): Promise&lt;void&gt;</code></td>
-<td align="left">获取一个 <code>Promise</code>，当 <code>NgZone</code> 稳定时，该 <code>Promise</code> 会求解。此外，如果适用，则告知 <code>NgZone</code> 稳定（例如，在 <code>fakeAsync</code> 测试中调用 <code>flush()</code>）。</td>
+<td align="left">获取一个在 <a href="/api/core/NgZone"><code>NgZone</code></a> 稳定时解析的 <code>Promise</code>。此外，如果适用，会告知 <a href="/api/core/NgZone"><code>NgZone</code></a> 稳定（例如，在 <a href="/api/core/testing/fakeAsync"><code>fakeAsync</code></a> 测试中调用 <a href="/api/core/testing/flush"><code>flush()</code></a>）。</td>
 </tr>
 <tr>
 <td align="left"><code>abstract waitForTasksOutsideAngular(): Promise&lt;void&gt;</code></td>
-<td align="left">获取一个 <code>Promise</code>，当 <code>NgZone</code> 的父 Zone 稳定时，该 <code>Promise</code> 会求解。</td>
+<td align="left">获取一个在 <a href="/api/core/NgZone"><code>NgZone</code></a> 的父区域稳定时解析的 <code>Promise</code>。</td>
 </tr>
 
       </tbody>
     </table>
   </div>
-  <p>除了实现缺失的方法之外，此类还应为测试作者提供一种获取 <code>ComponentHarness</code> 实例的方法。你应该定义一个受保护的构造函数，并提供一个名为 <code>loader</code> 的静态方法，该方法返回 <code>HarnessLoader</code> 实例。这允许测试作者编写如下代码：<code>SomeHarnessEnvironment.loader().getHarness(...)</code>。根据特定环境的需求，该类可以提供几种不同的静态方法或需要传递参数。（例如，<code>TestbedHarnessEnvironment</code> 上的 <code>loader</code> 方法接受 <code>ComponentFixture</code>，并且该类提供了其他静态方法，分别名为 <code>documentRootLoader</code> 和 <code>harnessForFixture</code>）。</p>
-<p>Angular CDK 中的 <a href="https://github.com/angular/components/blob/main/src/cdk/testing/testbed/testbed-harness-environment.ts#L89" target="_blank"><code>TestbedHarnessEnvironment</code></a> 和 <a href="https://github.com/angular/components/blob/main/src/cdk/testing/selenium-webdriver/selenium-web-driver-harness-environment.ts#L71" target="_blank">SeleniumWebDriverHarnessEnvironment</a> 实现是此接口实现的良好范例。</p>
+  <p>除了实现缺失的方法外，此类还应提供一种让测试作者获取 <a href="/api/cdk/testing/ComponentHarness"><code>ComponentHarness</code></a> 实例的方式。您应该定义一个受保护的构造函数，并提供一个名为 <code>loader</code> 的静态方法，该方法返回一个 <a href="/api/cdk/testing/HarnessLoader"><code>HarnessLoader</code></a> 实例。这允许测试作者编写类似的代码：<code>SomeHarnessEnvironment.loader().getHarness(...)</code>。根据特定环境的需求，该类可以提供几个不同的静态方法或要求传递参数。（例如，<a href="/api/cdk/testing/testbed/TestbedHarnessEnvironment"><code>TestbedHarnessEnvironment</code></a> 上的 <code>loader</code> 方法接受一个 <a href="/api/core/testing/ComponentFixture"><code>ComponentFixture</code></a>，并且该类提供名为 <code>documentRootLoader</code> 和 <code>harnessForFixture</code> 的附加静态方法）。</p>
+<p>Angular CDK 中的 <a href="/api/cdk/testing/testbed/TestbedHarnessEnvironment"></a><a href="/api/cdk/testing/testbed/TestbedHarnessEnvironment"><code>TestbedHarnessEnvironment</code></a> 和 <a href="/api/cdk/testing/selenium-webdriver/SeleniumWebDriverHarnessEnvironment">SeleniumWebDriverHarnessEnvironment</a> 实现是此接口实现的良好示例。</p>
 
   <h2 id="handling-auto-change-detection">
     <a href="#handling-auto-change-detection" class="docs-anchor" tabindex="-1" aria-label="Link to Handling auto change detection">处理自动变更检测</a>
   </h2>
-  <p>为了支持 <code>manualChangeDetection</code> 和并行 API，你的环境应安装一个用于自动变更检测状态的处理程序。</p>
-<p>当你的环境想要开始处理自动变更检测状态时，它可以调用 <code>handleAutoChangeDetectionStatus(handler)</code>。处理程序函数将接收一个 <code>AutoChangeDetectionStatus</code>，它具有两个属性 <code>isDisabled</code> 和 <code>onDetectChangesNow()</code>。有关更多信息，请参阅 <a href="https://material.angular.io/cdk/testing/api#AutoChangeDetectionStatus" target="_blank">AutoChangeDetectionStatus API 参考页</a>。
-如果你的环境想要停止处理自动变更检测状态，它可以调用 <code>stopHandlingAutoChangeDetectionStatus()</code>。</p>
+  <p>为了支持 <a href="/api/cdk/testing/manualChangeDetection"><code>manualChangeDetection</code></a> 和并行 API，您的环境应安装一个自动变更检测状态的处理器。</p>
+<p>当您的环境想要开始处理自动变更检测状态时，可以调用 <code>handleAutoChangeDetectionStatus(handler)</code>。处理器函数将接收一个 <a href="/api/cdk/testing/AutoChangeDetectionStatus"><code>AutoChangeDetectionStatus</code></a>，它有两个属性 <code>isDisabled</code> 和 <code>onDetectChangesNow()</code>。有关更多信息，请参阅 <a href="/api/cdk/testing/AutoChangeDetectionStatus">AutoChangeDetectionStatus API 参考页</a>。
+如果您的环境想要停止处理自动变更检测状态，可以调用 <a href="/api/cdk/testing/stopHandlingAutoChangeDetectionStatus"><code>stopHandlingAutoChangeDetectionStatus()</code></a>。</p>

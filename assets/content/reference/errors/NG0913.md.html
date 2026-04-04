@@ -31,7 +31,7 @@
   <ul class="docs-list">
     <li>使用较小的源图片</li>
 <li>如果不同的布局需要多种尺寸，请添加 <a href="https://web.dev/learn/design/responsive-images/#responsive-images-with-srcset" target="_blank"><code>srcset</code></a>。</li>
-<li>切换为使用 Angular 的内置图片指令 (<a href="https://angular.io/api/common/NgOptimizedImage" target="_blank"><code>NgOptimizedImage</code></a>)，它可以自动生成 <a href="https://angular.io/guide/image-directive#request-images-at-the-correct-size-with-automatic-srcset" target="_blank">srcset</a>。</li>
+<li>切换到使用 Angular 内置的图片指令（<a href="https://angular.dev/api/common/NgOptimizedImage" target="_blank"></a><a href="/api/common/NgOptimizedImage"><code>NgOptimizedImage</code></a>），该指令可自动生成 <a href="https://angular.dev/guide/image-optimization#request-images-at-the-correct-size-with-automatic-srcset" target="_blank">srcset</a>。</li>
 
   </ul>
   
@@ -41,7 +41,7 @@
   
   <ul class="docs-list">
     <li>将 <code>loading</code> 属性更改为其他值，例如 <code>"eager"</code>。</li>
-<li>切换为使用 Angular 的内置图片指令 (<a href="https://angular.io/api/common/NgOptimizedImage" target="_blank"><code>NgOptimizedImage</code></a>)，它可以轻松地<a href="https://angular.io/guide/image-directive#step-4-mark-images-as-priority" target="_blank">优先加载 LCP 图片</a>。</li>
+<li>切换到使用 Angular 内置的图片指令（<a href="https://angular.dev/api/common/NgOptimizedImage" target="_blank"></a><a href="/api/common/NgOptimizedImage"><code>NgOptimizedImage</code></a>），该指令可以轻松地 <a href="https://angular.dev/guide/image-optimization#mark-images-as-priority" target="_blank">优先加载 LCP 图片</a>。</li>
 
   </ul>
   
@@ -51,6 +51,5 @@
   <p>可以使用应用根目录下的提供者，在站点范围内单独禁用这两个警告：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">providers</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    provide: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">IMAGE_CONFIG</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    useValue: {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      disableImageSizeWarning: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      disableImageLazyLoadWarning: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  },</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">],</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">providers</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: [</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    provide: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"><a href="/api/common/IMAGE_CONFIG">IMAGE_CONFIG</a></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    useValue: {</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      disableImageSizeWarning: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">, </span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      disableImageLazyLoadWarning: </span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">true</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  },</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">],</span></span></code></pre>
   </div>

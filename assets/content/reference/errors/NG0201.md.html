@@ -22,10 +22,9 @@
     <a href="#debugging-the-error" class="docs-anchor" tabindex="-1" aria-label="Link to Debugging the error">调试此错误</a>
   </h2>
   <p>从错误指出缺少提供者的对象开始反向追溯：<code>No provider for ${this}!</code>。这通常在服务中抛出，这些服务需要不存在的提供者。</p>
-<p>要修复此错误，请确保你的服务已在 <code>NgModule</code> 的提供者列表中注册，或者在顶部带有 <code>providedIn</code> 属性的 <code>@Injectable</code> 装饰器。</p>
-<p>最常见的解决方案是在 <code>@Injectable</code> 中使用 <code>providedIn</code> 添加一个提供者：</p>
+<p>要修复此错误，请确保你的服务已在某个 <code>NgModule</code> 的提供者列表中注册，或者在顶部具有带有 <code>providedIn</code> 属性的 <code>@Injectable</code> 装饰器。</p>
+<p>最常见的解决方案是在 <a href="/api/core/Injectable"><code>@Injectable</code></a> 中使用 <code>providedIn</code> 添加提供者：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">@</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">Injectable</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({ providedIn: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'app'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> })</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">@</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"><a href="/api/core/Injectable">Injectable</a></span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">({ providedIn: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'app'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> })</span></span></code></pre>
   </div>

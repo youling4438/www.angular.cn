@@ -58,13 +58,8 @@
   </h3>
   
   <ul class="docs-list">
-    <li><a href="/guide/incremental-hydration">增量式水合</a></li>
-<li><a href="/guide/experimental/zoneless">Zoneless 变更检测</a></li>
-<li><a href="/api/platform-browser/withI18nSupport">对 i18n 控制块的水合支持</a></li>
-<li><a href="/guide/signals/resource">资源 API</a></li>
-<li><a href="/api/core/effect">副作用 API</a></li>
-<li><a href="/guide/signals/linked-signal">关联的 Signal API</a></li>
-<li><a href="/guide/hybrid-rendering">路由级渲染模式</a></li>
+    <li><a href="/guide/signals/resource">资源 API</a></li>
+<li><a href="/api/common/http/httpResource">httpResource</a></li>
 
   </ul>
   
@@ -73,15 +68,12 @@
   </h3>
   
   <ul class="docs-list">
-    <li><a href="/guide/signals">探索 Angular Signals</a></li>
+    <li><a href="/guide/zoneless">Zoneless 变更检测</a></li>
+<li><a href="/guide/signals/linked-signal">关联的 Signal API</a></li>
+<li><a href="/guide/incremental-hydration">增量式水合</a></li>
+<li><a href="/api/core/effect">副作用 API</a></li>
 <li><a href="/api/platform-browser/withEventReplay">使用 SSR 的事件重放</a></li>
-<li><a href="/guide/defer">可延期加载的视图</a></li>
-<li><a href="/guide/templates/control-flow">内置控制流</a></li>
-<li><a href="/guide/templates/variables">局部变量声明</a></li>
-<li><a href="/guide/signals/inputs">Signal 输入</a></li>
-<li><a href="/guide/signals/model">模型输入</a></li>
-<li><a href="/guide/signals/queries">Signal 查询</a></li>
-<li><a href="/guide/components/outputs">基于函数的输出</a></li>
+<li><a href="/guide/ssr">路由级渲染模式</a></li>
 
   </ul>
   
@@ -95,11 +87,30 @@
   
     <div class="docs-card-grid">
       
-    <a href="https://github.com/angular/angular/discussions/49685" target="_blank" class="docs-card">
+  <div class="docs-card">
+    <div>
+      <h3>Selectorless</h3>
+      <p>为了减少样板代码并提高独立组件的工效学，我们现在正在设计一种解决方案，该方案将使选择器成为可选的。要使用组件或指令，你将能够导入它并直接在组件的模板中使用它。</p>
+<p>我们已经开始了无选择器的早期原型设计，并且仍处于规划的早期阶段。当我们有了设计并准备好进行下一步时，我们将分享一个征求意见稿。</p>
+
+    </div>
+    
+  </div>
+  
+  <div class="docs-card">
+    <div>
+      <h3>Signal Forms</h3>
+      <p>我们计划分析关于 Angular 表单的现有反馈，并设计一个解决方案，以满足开发人员的需求，并使用 Signal 来管理响应式状态。</p>
+
+    </div>
+    
+  </div>
+  
+    <a href="https://github.com/angular/angular/discussions/60121" target="_blank" class="docs-card">
       <div>
-        <h3>交付 Angular Signals</h3>
-        <p>这个项目通过引入 Signals 作为响应式原始类型，重新思考了 Angular 的响应式模型。最初的规划促成了数百次讨论、与开发者的对话、反馈会议、用户体验研究以及一系列 RFC，这些 RFC 收到了 1,000 多条评论。</p>
-<p>作为 v17 版本发布的一部分，我们将 Angular Signals 库从开发者预览版升级。在 v19 中，我们将基于 signal 的查询、输入和模型输入移至稳定版。接下来，我们需要在完成此项目之前最终确定副作用。</p>
+        <h3>异步响应式</h3>
+        <p>为了让开发者能够使用信号处理异步数据流，我们开发了 <code>resource</code> 异步原始类型。在此基础上，我们引入了 <code>httpResource</code>，它允许您发送 HTTP 请求并将响应作为信号接收。</p>
+<p>我们仍在积极收集这些新的实验性 API 的反馈。请尝试使用它们，并在 GitHub 上与我们分享您的反馈！</p>
 
       </div>
       <span>了解更多</span>
@@ -109,7 +120,8 @@
     <div>
       <h3>Zoneless Angular</h3>
       <p>在 v18 中，我们在 Angular 中发布了实验性的 zoneless 支持。它使开发者无需在其捆绑包中包含 zone.js 即可使用该框架，从而提高了性能、调试体验和互操作性。作为初始版本的一部分，我们还在 Angular CDK 和 Angular Material 中引入了 zoneless 支持。</p>
-<p>在 v19 中，我们在服务器端渲染中引入了 zoneless 支持，解决了一些极端情况，并创建了一个原理图来搭建 zoneless 项目。我们将 <a href="https://fonts.google.com/">Google Fonts</a> 迁移到 zoneless，这提高了性能、开发者体验，并使我们能够识别在将此特性移至开发者预览版之前需要解决的差距。请继续关注未来几个月的更多更新。</p>
+<p>在 v19 中，我们在服务器端渲染中引入了无区域支持，处理了一些边缘情况，并创建了一个原理图来脚手架无区域项目。我们将 <a href="https://fonts.google.com/">Google Fonts</a> 迁移到了无区域，这提高了性能和开发者体验，并使我们能够识别在将此功能移至开发者预览版之前需要解决的差距。</p>
+<p>截至 Angular v20.2，Zoneless Angular 已稳定，并包含错误处理和服务器端渲染方面的改进。</p>
 
     </div>
     
@@ -124,20 +136,11 @@
     
   </div>
   
-  <div class="docs-card">
-    <div>
-      <h3>Angular DevTools 中的 Signal 调试</h3>
-      <p>随着 Angular 中 Signals 的发展，我们正在开发更好的工具来调试它们。优先级列表中较高的是用于检查和调试 signal 的 UI。</p>
-
-    </div>
-    
-  </div>
-  
     <a href="https://github.com/angular/angular/issues/39367#issuecomment-1439537306" target="_blank" class="docs-card">
       <div>
         <h3>改进 HMR（热模块重载）</h3>
         <p>我们正在通过启用热模块替换来努力实现更快的编辑/刷新周期。</p>
-<p>在 Angular v19 中，我们发布了对 CSS 和模板 HMR 的初始支持。我们将继续收集反馈，以确保在我们将此项目标记为完成之前，我们正在满足开发者的需求。</p>
+<p>在 Angular v19 中，我们发布了对 CSS 和模板 HMR 的初始支持，并在 v20 中将模板 HMR 升级为稳定版。我们将继续收集反馈，以确保在将此项目标记为完成后，我们已满足开发者的需求。</p>
 
       </div>
       <span>了解更多</span>
@@ -154,7 +157,7 @@
   <div class="docs-card">
     <div>
       <h3>新的 CDK 原始组件</h3>
-      <p>我们正在开发新的 CDK 原始组件，以方便基于 <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#combobox" target="_blank">Combobox</a> 的 WAI-ARIA 设计模式创建自定义组件。Angular v14 作为此项目的一部分引入了稳定的 <a href="https://material.angular.io/cdk/categories" target="_blank">菜单和对话框原始组件</a>，并在 v15 中引入了 Listbox。</p>
+      <p>我们正在开发新的 CDK 原始类型，以方便基于 WAI-ARIA 设计模式为 <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#combobox" target="_blank">Combobox</a> 创建自定义组件。Angular v14 作为该项目的一部分，引入了稳定的 <a href="https://material.angular.dev/cdk/categories" target="_blank">菜单和对话框原始类型</a>，v15 则引入了 Listbox。</p>
 
     </div>
     
@@ -181,7 +184,7 @@
     <div>
       <h3>使用 ng test 实现单元测试工具现代化</h3>
       <p>在 v12 中，我们通过使用诸如 Cypress、Nightwatch、Puppeteer、Playwright 和 Webdriver.io 等现代替代品替换 Protractor，重新审视了 Angular 的端到端测试体验。接下来，我们希望着手处理 <code>ng test</code>，以实现 Angular 单元测试体验的现代化。</p>
-<p>我们目前正在评估 Web Test Runner、Vitest 和 Jest 作为 Angular 项目新测试运行器的候选方案，同时保留 Jasmine 作为断言库，以避免破坏现有测试。</p>
+<p>在 Angular v20 中，我们引入了对 vitest 的实验性支持。请务必试用并与我们分享您的反馈！</p>
 
     </div>
     
@@ -197,29 +200,10 @@
       <span>了解更多</span>
     </a>
     
-    </div>
-    
-  <h2 id="fast-by-default">
-    <a href="#fast-by-default" class="docs-anchor" tabindex="-1" aria-label="Link to Fast by default">默认很快</a>
-  </h2>
-  
-    <div class="docs-card-grid">
-      
   <div class="docs-card">
     <div>
-      <h3>启用增量水合</h3>
-      <p>在 v17 中，我们将水合从开发者预览版升级，并且我们一直观察到 LCP 提高了 40-50%。从那时起，我们开始了增量水合的原型设计，并在 ng-conf 的舞台上分享了一个演示。</p>
-<p>在 v19 中，我们以开发者预览模式发布了增量水合，它由 <code>@defer</code> 控制块提供支持。试用一下，并<a href="https://github.com/angular/angular/issues">与我们分享您的反馈</a>！</p>
-
-    </div>
-    
-  </div>
-  
-  <div class="docs-card">
-    <div>
-      <h3>服务器路由配置</h3>
-      <p>我们正在努力在服务器上启用更符合工效学的路由配置。我们希望能够轻松地声明哪些路由应该进行服务器端渲染、预渲染或客户端渲染。</p>
-<p>在 Angular v19 中，我们发布了路由级渲染模式的开发者预览版，它允许你精细地配置你希望 Angular 预渲染、服务器端渲染或客户端渲染哪些路由。</p>
+      <h3>Angular DevTools 中的 Signal 调试</h3>
+      <p>随着 Angular 中 Signals 的发展，我们正在开发更好的工具来调试它们。优先级列表中较高的是用于检查和调试 signal 的 UI。</p>
 
     </div>
     
@@ -234,25 +218,6 @@
 
     <div class="docs-card-grid">
       
-  <div class="docs-card">
-    <div>
-      <h3>Signal Forms</h3>
-      <p>我们计划分析关于 Angular 表单的现有反馈，并设计一个解决方案，以满足开发人员的需求，并使用 Signal 来管理响应式状态。</p>
-
-    </div>
-    
-  </div>
-  
-  <div class="docs-card">
-    <div>
-      <h3>Selectorless</h3>
-      <p>为了减少样板代码并提高独立组件的工效学，我们现在正在设计一种解决方案，该方案将使选择器成为可选的。要使用组件或指令，你将能够导入它并直接在组件的模板中使用它。</p>
-<p>我们仍处于规划 selectorless 的早期阶段。当我们有一个初步设计并准备好进行下一步时，我们将分享征求意见稿。</p>
-
-    </div>
-    
-  </div>
-  
   <div class="docs-card">
     <div>
       <h3>流式服务器端渲染的探索</h3>
@@ -298,6 +263,36 @@
   
     <div class="docs-card-grid">
       
+  <div class="docs-card">
+    <div>
+      <h3>服务器路由配置</h3>
+      <p>我们正在努力在服务器上启用更符合工效学的路由配置。我们希望能够轻松地声明哪些路由应该进行服务器端渲染、预渲染或客户端渲染。</p>
+<p>在 Angular v19 中，我们发布了路由级别渲染模式的开发者预览版，允许您精细地配置希望 Angular 预渲染、服务器端渲染或客户端渲染的路由。在 Angular v20 中，我们已将其稳定化。</p>
+
+    </div>
+    <span>于 2025 年第二季度完成</span>
+  </div>
+  
+  <div class="docs-card">
+    <div>
+      <h3>启用增量水合</h3>
+      <p>在 v17 中，我们将水合从开发者预览版升级，并且我们一直观察到 LCP 提高了 40-50%。从那时起，我们开始了增量水合的原型设计，并在 ng-conf 的舞台上分享了一个演示。</p>
+<p>在 v19 中，我们发布了由 <code>@defer</code> 块支持的增量水合开发者预览模式。在 Angular v20 中，我们已将其稳定化！</p>
+
+    </div>
+    <span>于 2025 年第二季度完成</span>
+  </div>
+  
+    <a href="https://github.com/angular/angular/discussions/49685" target="_blank" class="docs-card">
+      <div>
+        <h3>交付 Angular Signals</h3>
+        <p>这个项目通过引入 Signals 作为响应式原始类型，重新思考了 Angular 的响应式模型。最初的规划促成了数百次讨论、与开发者的对话、反馈会议、用户体验研究以及一系列 RFC，这些 RFC 收到了 1,000 多条评论。</p>
+<p>在 Angular v20 中，我们已将所有基础响应式原始类型（包括 signal、effect、linkedSignal、基于 signal 的查询和输入）稳定化。</p>
+
+      </div>
+      <span>于 2025 年第二季度完成</span>
+    </a>
+    
     <a href="https://github.com/angular/components/issues/13372" target="_blank" class="docs-card">
       <div>
         <h3>支持二维拖放</h3>
@@ -344,7 +339,7 @@
     <span>于 2024 年第三季度完成</span>
   </div>
   
-    <a href="https://material.angular.io/guide/theming" target="_blank" class="docs-card">
+    <a href="https://material.angular.dev/guide/theming" target="_blank" class="docs-card">
       <div>
         <h3>扩展 Angular Material 的可定制性</h3>
         <p>为了更好地定制我们的 Angular Material 组件并启用 Material 3 功能，我们将与 Google 的 Material Design 团队合作，定义基于令牌的主题 API。</p>
@@ -508,7 +503,7 @@
       <span>于 2022 年第四季度完成</span>
     </a>
     
-    <a href="https://material.angular.io/guide/mdc-migration" target="_blank" class="docs-card">
+    <a href="https://material.angular.dev/guide/mdc-migration" target="_blank" class="docs-card">
       <div>
         <h3>通过集成 MDC Web 增强 Angular Material 组件</h3>
         <p>MDC Web 是 Google Material Design 团队创建的一个库，它为构建 Material Design 组件提供了可复用的基元。Angular 团队正在将这些基元整合到 Angular Material 中。使用 MDC Web 使 Angular Material 更紧密地与 Material Design 规范保持一致，扩展了无障碍功能，提高了组件质量，并提高了我们团队的速度。</p>
@@ -724,7 +719,7 @@
       <span>已于 2021 年第一季度完成</span>
     </a>
     
-    <a href="https://material.angular.io/guide/using-component-harnesses" target="_blank" class="docs-card">
+    <a href="https://material.angular.dev/guide/using-component-harnesses" target="_blank" class="docs-card">
       <div>
         <h3>扩展组件测试工具最佳实践</h3>
         <p>Angular CDK 在版本 9 中向 Angular 引入了组件测试工具的概念。 测试工具使组件作者可以创建受支持的 API，用于测试组件交互。 我们正在继续改进此工具基础设施，并阐明围绕使用工具的最佳实践。 我们还在努力推动 Google 内部更多地采用工具。</p>

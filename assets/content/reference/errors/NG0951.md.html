@@ -11,7 +11,7 @@
     </a>
   </div>
     </header>
-    <p>必需的子查询 (<code>contentChild.required</code> 或 <code>viewChild.required</code>) 结果在查询结果被计算出来之前或查询没有匹配项时被访问。</p>
+    <p>在查询结果计算之前或查询无匹配项时，访问了必需的子查询（<a href="/api/core/contentChild#required"><code>contentChild.required</code></a> 或 <a href="/api/core/viewChild#required"><code>viewChild.required</code></a>）结果。</p>
 <p>这可能发生在两种不同的情况下：</p>
 
   <ul class="docs-list">
@@ -22,8 +22,8 @@
   <p>内容查询和视图查询各自在不同的时间点计算其结果：</p>
 
   <ul class="docs-list">
-    <li><code>contentChild</code> 结果在<em>宿主</em>视图（声明查询的指令所使用的模板）创建之后可用；</li>
-<li><code>viewChild</code> 结果在声明查询的组件的模板创建之后可用。</li>
+    <li><a href="/api/core/contentChild"><code>contentChild</code></a> 结果在<em>宿主</em>视图（声明了查询的指令所使用的模板）创建后可用；</li>
+<li><a href="/api/core/viewChild"><code>viewChild</code></a> 结果在声明了查询的组件的模板创建后可用。</li>
 
   </ul>
   <p>在查询结果可用之前访问它们会导致本页描述的错误。最值得注意的是，查询结果在声明查询的组件或指令的构造函数中是<em>永远</em>不可用的。</p>
@@ -31,6 +31,6 @@
   <h2 id="fixing-the-error">
     <a href="#fixing-the-error" class="docs-anchor" tabindex="-1" aria-label="Link to Fixing the error">修复此错误</a>
   </h2>
-  <p><code>contentChild</code> 查询结果可以在 <code>AfterContentChecked</code> 生命周期钩子或之后访问。
-<code>viewChild</code> 查询结果可以在 <code>AfterViewChecked</code> 生命周期钩子或之后访问。</p>
+  <p><code>contentChild</code> 查询结果可以在 <a href="/api/core/AfterContentChecked"><code>AfterContentChecked</code></a> 生命周期钩子或之后访问。
+<code>viewChild</code> 查询结果可以在 <a href="/api/core/AfterViewChecked"><code>AfterViewChecked</code></a> 生命周期钩子或之后访问。</p>
 <p>确保必需的查询至少匹配一个节点并且始终有结果。你可以通过在上面列出的生命周期钩子中访问查询结果来验证这一点。</p>

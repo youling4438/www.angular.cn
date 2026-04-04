@@ -17,10 +17,10 @@
       <h3>Unicode 语言环境 ID</h3>
       
   <ul class="docs-list">
-    <li><p>语言环境 ID 符合 <a href="https://cldr.unicode.org/index/cldr-spec" title="Core" specification | unicode cldr project target="_blank">Unicode 通用语言环境数据仓库 (CLDR) 核心规范</a>。
-  有关语言环境 ID 的更多信息，请参阅 [Unicode 语言和语言环境标识符][UnicodeCldrDevelopmentCoreSpecificationLocaleIDs]。</p>
+    <li><p>语言环境 ID 符合<a href="https://cldr.unicode.org/index/cldr-spec" title="Core Specification | Unicode CLDR Project" target="_blank">Unicode Common Locale Data Repository (CLDR) 核心规范</a>。
+  有关语言环境 ID 的更多信息，请参阅 [Unicode Language and Locale Identifiers][UnicodeCldrDevelopmentCoreSpecificationLocaleIDs]。</p>
 </li>
-<li><p>CLDR 和 Angular 使用 <a href="https://www.rfc-editor.org/info/bcp47" title="BCP" 47 | rfc editor target="_blank">BCP 47 标记</a>作为语言环境 ID 的基础</p>
+<li><p>CLDR 和 Angular 使用<a href="https://www.rfc-editor.org/info/bcp47" title="BCP 47 | RFC Editor" target="_blank">BCP 47 标签</a>作为语言环境 ID 的基础</p>
 </li>
 
   </ul>
@@ -30,8 +30,7 @@
 语言环境 ID 由语言标识符、连字符 (<code>-</code>) 和语言环境扩展名组成。</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{language_id}-{locale_extension}</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{language_id}-{locale_extension}</span></span></code></pre>
   </div>
     <div class="docs-alert docs-alert-helpful">
     <p><strong>提示：</strong> 要准确翻译你的 Angular 项目，你必须确定要将哪些语言和语言环境作为国际化的目标。</p>
@@ -76,7 +75,7 @@
       </tbody>
     </table>
   </div>
-  <p><a href="https://github.com/angular/angular/tree/main/packages/common/locales" title="angular/packages/common/locales" | angular github target="_blank">Angular 代码仓库</a> 包含常用语言环境。</p>
+  <p><a href="https://github.com/angular/angular/tree/main/packages/common/locales" title="angular/packages/common/locales | angular/angular | GitHub" target="_blank">Angular 代码库</a>包含常用语言环境。</p>
 
     <div class="docs-callout docs-callout-helpful">
       <h3></h3>
@@ -92,14 +91,13 @@
 <p>要更改项目中用于构建的源语言环境，请完成以下操作。</p>
 
     <ol class="docs-ordered-list">
-      <li>打开 <a href="reference/configs/workspace-config" title="Angular" workspace configuration | angular><code>angular.json</code></a> 工作区构建配置文件。</li>
+      <li>打开 <a href="reference/configs/workspace-config" title="Angular workspace configuration | Angular"><code>angular.json</code></a> 工作区构建配置文件。</li>
 <li>在 <code>i18n</code> 部分内添加或修改 <code>sourceLocale</code> 字段：</li>
 
     </ol>
     <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "projects"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    "your-project"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">      "i18n"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        "sourceLocale"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"ca"</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // Use your desired locale code</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "projects"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    "your-project"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">      "i18n"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        "sourceLocale"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"ca"</span><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">  // Use your desired locale code</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
   </div>
   <h2 id="whats-next">
     <a href="#whats-next" class="docs-anchor" tabindex="-1" aria-label="Link to What's next">下一步</a>

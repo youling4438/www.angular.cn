@@ -74,6 +74,22 @@ Angular 编译器包含了“扩展诊断”，用于识别许多此类模式，
 <td align="left"><code>NG8113</code></td>
 <td align="left"><a href="extended-diagnostics/NG8113"><code>unusedStandaloneImports</code></a></td>
 </tr>
+<tr>
+<td align="left"><code>NG8114</code></td>
+<td align="left"><a href="extended-diagnostics/NG8114"><code>unparenthesizedNullishCoalescing</code></a></td>
+</tr>
+<tr>
+<td align="left"><code>NG8115</code></td>
+<td align="left"><a href="extended-diagnostics/NG8115"><code>uninvokedTrackFunction</code></a></td>
+</tr>
+<tr>
+<td align="left"><code>NG8116</code></td>
+<td align="left"><a href="extended-diagnostics/NG8116"><code>missingStructuralDirective</code></a></td>
+</tr>
+<tr>
+<td align="left"><code>NG8117</code></td>
+<td align="left"><a href="extended-diagnostics/NG8117"><code>uninvokedFunctionInTextInterpolation</code></a></td>
+</tr>
 
       </tbody>
     </table>
@@ -114,8 +130,7 @@ Angular 编译器包含了“扩展诊断”，用于识别许多此类模式，
   <p>检查严重程度可以配置为<a href="reference/configs/angular-compiler-options">Angular 编译器选项</a>：</p>
 <div class="docs-code">
     
-    <pre class="docs-mini-scroll-track">      <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "angularCompilerOptions"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    "extendedDiagnostics"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      // The categories to use for specific diagnostics.</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">      "checks"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">        // Maps check name to its category.</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        "invalidBananaInBox"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"suppress"</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      },</span></span><span class="line"></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      // The category to use for any diagnostics not listed in `checks` above.</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">      "defaultCategory"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"error"</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
-    </pre>
+    <pre class="shiki shiki-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">{</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">  "angularCompilerOptions"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">    "extendedDiagnostics"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      // The categories to use for specific diagnostics.</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">      "checks"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: {</span></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">        // Maps check name to its category.</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">        "invalidBananaInBox"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"suppress"</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      },</span></span><span class="line"></span><span class="line"><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D">      // The category to use for any diagnostics not listed in `checks` above.</span></span><span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">      "defaultCategory"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"error"</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
   </div><p><code>checks</code> 字段将各个诊断的名称映射到其关联的类别。
 请参阅<a href="#diagnostics">诊断</a>，获取扩展诊断的完整列表以及用于配置它们的名字。</p>
 <p><code>defaultCategory</code> 字段用于任何未在 <code>checks</code> 下明确列出的诊断。
